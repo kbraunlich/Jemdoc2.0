@@ -131,7 +131,7 @@ class CommandLineParser(object):
 
     def getUserConfig(self):
         if self._args.config:
-            if not os.path.exists():
+            if not os.path.exists(self._args.config):
                 raise FileNotFoundError("configuration file %s provided does not exist" % self._args.config)
         return self._args.config
 
